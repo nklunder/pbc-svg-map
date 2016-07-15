@@ -205,12 +205,15 @@
                  * change. It's intended target is the county outline 'path'
                  * element inside of each county 'g' element.
                  */
-                .st6 {
+                [id$='county'] .st6 {
                   transition: fill .28s;
                 }
-                .st6:hover {
+                [id$='county']:hover .st6 {
                   cursor: pointer;
                   fill: #006298;
+                }
+                [id$='county']:hover text {
+                  cursor: pointer;
                 }
               </style>
 
