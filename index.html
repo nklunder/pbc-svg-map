@@ -173,6 +173,16 @@
         <div class="row">
           <div role="main" class="col-sm-9 col-lg-10">
             <div id="content-main">
+
+
+
+
+
+
+
+<!-- Begin county-selection specific code -->
+
+
               <style scoped>
                 /**
                  * Fixes for SVG to display properly in Internet Explorer
@@ -219,10 +229,15 @@
 
               <div class="row">
                 <div class="hidden-xs col-sm-12 wa-state-map-container">
-                  <!-- Paste SVG code here.
+                  <!-- Paste SVG code below.
 
-                       NOTE: the SVG element must have an
-                       id of 'state-map' for it to be functional -->
+                   NOTE: The SVG element must have an id of 'state-map' for
+                   it to be functional.
+
+                   In Adobe Illustrator, each county (outline and label)
+                   should be in its own layer and be named [COUNTY NAME]-county,
+                   e.g. 'king-county'. This will cause the resulting SVG to have
+                   all of the necessary groups and IDs to function properly. -->
                   <svg
                     id="state-map"
                     version="1.1"
@@ -847,7 +862,11 @@
 
                 </div> <!-- end SVG column -->
               </div> <!-- end SVG row -->
+
               <div class="row">
+                <!-- NOTE: Each county should be added as a select menu option
+                  with the 'value' attribute set to [COUNTY-NAME]-county,
+                  e.g. 'king-county'. -->
                 <form class="form col-sm-6">
                   <label for="county-select-menu">Select county</label>
                   <select class="form-control" id="county-select-menu">
@@ -856,13 +875,26 @@
                   </select>
                 </form>
               </div> <!-- end county select menu row -->
+
               <div class="row">
+                <!-- NOTE: Each county should be in its own wrapper div with
+                  an ID of [COUNTY-NAME]-county-info, e.g. 'king-county-info'.
+                  This will be hidden or shown depending on the currently
+                  selected county.
+
+                  the div with the ID of 'county-intro-content' will be shown on
+                  initial page load, and replaced by specific county information
+                  upon interaction with the SVG map or select menu.
+
+                  The structure inside of the wrapper div can be any combination
+                  of column widths that add up to 12 -->
                 <div id="county-intro-content">
                   <div class="col-xs-12">
                     <h2>Introductory Content</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium velit reiciendis voluptatum, doloribus illum! Tempore distinctio soluta, aliquam sequi, doloribus voluptatum laborum reiciendis dolore ut veritatis ducimus, totam necessitatibus, quis.</p>
                   </div>
                 </div>
+
                 <div id="adams-county-info" style="display: none">
                   <div class="col-sm-4">
                     <h2>Adams Info</h2>
@@ -874,6 +906,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sunt minima corporis sint quod placeat nisi inventore, ad nemo necessitatibus itaque. Totam voluptate maxime eveniet dolores, dolor ipsum fuga modi.</p>
                   </div>
                 </div> <!-- end Adams info container -->
+
                 <div id="franklin-county-info" style="display: none">
                   <div class="col-sm-4">
                     <h2>Franklin Info</h2>
@@ -884,9 +917,18 @@
                     <h2>More info here?</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sunt minima corporis sint quod placeat nisi inventore, ad nemo necessitatibus itaque. Totam voluptate maxime eveniet dolores, dolor ipsum fuga modi.</p>
                   </div>
-                </div> <!-- end Adams info container -->
+                </div> <!-- end Franklin info container -->
 
               </div> <!-- end counties info row -->
+
+
+<!-- End county-selection specific code -->
+
+
+
+
+
+
 
             </div>
             <!-- end #content-main-->
