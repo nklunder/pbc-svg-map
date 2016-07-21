@@ -259,11 +259,8 @@
                    			stroke-width: 1.0941;
                    			stroke-miterlimit: 10;
                    		}
-                   		.st0 {
-                   			fill: none;
-                   		}
                    		.st1 {
-                   			font-family: 'ArialMT';
+                   			font-family: 'Arial', sans-serif;
                    		}
                    		.st2 {
                    			font-size: 10px;
@@ -347,15 +344,7 @@
                    		c0.5-1.8-1.7-4.2-3.1-4.8c-1.4-0.6-2.6-1.8-2.2-2.8c0.4-1-9.8-1.4-11.6,0c-1.8,1.4-4.4-0.8-6.6-3.2c-2.2-2.4-3.2-3-5.2-2.6
                    		c-2,0.4-4,2.8-4,1.8c0-1,0-12.6,0-12.6h32.8c0,0,11.9-0.5,11.9,1.6C131.4,361.7,132.3,386.7,132.3,386.7z"/>
 
-                   		<text transform="matrix(1 0 0 1 88.5089 366.1356)">
-                   			<tspan x="0" y="0" class="st3 st1 st4">W</tspan>
-                   			<tspan x="7.5" y="0" class="st3 st1 st4">ah</tspan>
-                   			<tspan x="15.8" y="0" class="st3 st1 st4">ki</tspan>
-                   			<tspan x="21.5" y="0" class="st3 st1 st4">a</tspan>
-                   			<tspan x="25.7" y="0" class="st3 st1 st4">k</tspan>
-                   			<tspan x="29.2" y="0" class="st3 st1 st4">u</tspan>
-                   			<tspan x="33.7" y="0" class="st3 st1 st4">m</tspan>
-                   		</text>
+                   		<text transform="matrix(1 0 0 1 88.5089 366.1356)" class="st1 st3 st4">Wahkiakum</text>
                    	</g>
                    	<g id="thurston-county">
                    		<path
@@ -502,8 +491,7 @@
                    		c3.6-0.1,3.5,1.5,3.3,3.5c-0.2,2,0.3,7.8,0.3,7.8H699.7z"/>
 
                    		<text transform="matrix(1 0 0 1 660.5334 62.8098)">
-                   			<tspan x="0" y="0" class="st1 st2">Pend
-                   			</tspan>
+                   			<tspan x="0" y="0" class="st1 st2">Pend</tspan>
                    			<tspan x="0" y="12" class="st1 st2">Oreille</tspan>
                    		</text>
                    	</g>
@@ -578,14 +566,7 @@
                    		c6-2,2.1-0.5,5.1,1.1c3,1.6-0.3,4.4,1.9,4.4c2.1,0,1.1,0.4,1.5,4.6C204.2,211.9,199.6,221.4,197.2,221.4
                    		C194.8,221.4,197.2,221.4,197.2,221.4z"/>
 
-                   		<text transform="matrix(1 0 0 1 169.0501 203.9835)">
-                   			<tspan x="0" y="0" class="st3 st1 st2">K</tspan>
-                   			<tspan x="6.3" y="0" class="st3 st1 st2">i</tspan>
-                   			<tspan x="8.5" y="0" class="st3 st1 st2">t</tspan>
-                   			<tspan x="11.7" y="0" class="st3 st1 st2">s</tspan>
-                   			<tspan x="16.3" y="0" class="st3 st1 st2">a</tspan>
-                   			<tspan x="21.2" y="0" class="st3 st1 st2">p</tspan>
-                   		</text>
+                   		<text transform="matrix(1 0 0 1 169.0501 203.9835)" class="st1 st2 st3">Kitsap</text>
                    	</g>
                    	<g id="king-county">
                    		<path
@@ -821,11 +802,33 @@
                   with the 'value' attribute set to [COUNTY-NAME]-county,
                   e.g. 'grays-harbor-county'. -->
                 <form class="form col-sm-6">
-                  <label for="county-select-menu">Select county</label>
+                  <label for="county-select-menu">County name</label>
                   <select class="form-control" id="county-select-menu">
+                    <option value="" disabled selected>Select a county</option>
                     <option value="adams-county">Adams</option>
+                    <option value="asotin-county">Asotin</option>
+                    <option value="benton-county">Benton</option>
+                    <option value="clallam-county">Clallam</option>
+                    <option value="columbia-county">Columbia</option>
+                    <option value="cowlitz-county">Cowlitz</option>
                     <option value="franklin-county">Franklin</option>
+                    <option value="garfield-county">Garfield</option>
+                    <option value="grant-county">Grant</option>
+                    <option value="grays-harbor-county">Grays Harbor</option>
+                    <option value="island-county">Island</option>
+                    <option value="jefferson-county">Jefferson</option>
                     <option value="king-county">King</option>
+                    <option value="kitsap-county">Kitsap</option>
+                    <option value="okanogan-county">Okanogan</option>
+                    <option value="pacific-county">Pacific</option>
+                    <option value="pierce-county">Pierce</option>
+                    <option value="spokane-county">Spokane</option>
+                    <option value="snohomish-county">Snohomish</option>
+                    <option value="thurston-county">Thurston</option>
+                    <option value="wahkiakum-county">Wahkiakum</option>
+                    <option value="walla-walla-county">Walla Walla</option>
+                    <option value="whatcom-county">Whatcom</option>
+                    <option value="whitman-county">Whitman</option>
                   </select>
                 </form>
               </div> <!-- end county select menu row -->
