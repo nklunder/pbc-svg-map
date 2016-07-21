@@ -986,9 +986,6 @@
     function toggleDisplayedCounty(county) {
       var $county = $('#' + county + '-info');
 
-      // Sync the select menu option with the clicked-on county of the SVG
-      $countySelect.val(county);
-
       // Hide intro content if it's visible.
       $('#county-intro-content').hide();
 
@@ -1002,8 +999,12 @@
       // create a div with an ID of something like 'no-plans-info' and add
       // $('#no-plans-info').show() to the 'if' block below.
       if ($county.length === 0) {
+        // If clicked-on county has no plans, set select menu to initial value.
+        $countySelect.val("");
         $('#county-intro-content').show();
       } else {
+        // Sync the select menu option with the clicked-on county of the SVG.
+        $countySelect.val(county);
         $county.show();
       }
     }
