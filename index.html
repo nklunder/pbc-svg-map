@@ -821,12 +821,13 @@
               <div class="row">
                 <!-- NOTE: Each county should be added as a select menu option
                   with the 'value' attribute set to [COUNTY-NAME]-county,
-                  e.g. 'king-county'. -->
+                  e.g. 'grays-harbor-county'. -->
                 <form class="form col-sm-6">
                   <label for="county-select-menu">Select county</label>
                   <select class="form-control" id="county-select-menu">
                     <option value="adams-county">Adams</option>
                     <option value="franklin-county">Franklin</option>
+                    <option value="king-county">King</option>
                   </select>
                 </form>
               </div> <!-- end county select menu row -->
@@ -873,6 +874,18 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sunt minima corporis sint quod placeat nisi inventore, ad nemo necessitatibus itaque. Totam voluptate maxime eveniet dolores, dolor ipsum fuga modi.</p>
                   </div>
                 </div> <!-- end Franklin info container -->
+
+                <div id="king-county-info" style="display: none">
+                  <div class="col-sm-4">
+                    <h2>King Info</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos possimus qui, iure. Asperiores quisquam sit, eos blanditiis? Consequatur delectus minima, aliquid tempore tempora, consectetur iusto dicta minus atque neque distinctio.</p>
+                    <button class="btn btn-default">Test</button>
+                  </div>
+                  <div class="col-sm-8">
+                    <h2>More info here?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, sunt minima corporis sint quod placeat nisi inventore, ad nemo necessitatibus itaque. Totam voluptate maxime eveniet dolores, dolor ipsum fuga modi.</p>
+                  </div>
+                </div> <!-- end King info container -->
 
               </div> <!-- end counties info row -->
 
@@ -971,7 +984,6 @@
 
     function toggleDisplayedCounty(county) {
       var $county = $('#' + county + '-info');
-      console.log($county);
 
       // Hide intro content if it's visible.
       $('#county-intro-content').hide();
