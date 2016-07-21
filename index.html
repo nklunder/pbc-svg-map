@@ -986,6 +986,9 @@
     function toggleDisplayedCounty(county) {
       var $county = $('#' + county + '-info');
 
+      // Sync the select menu option with the clicked-on county of the SVG
+      $countySelect.val(county);
+
       // Hide intro content if it's visible.
       $('#county-intro-content').hide();
 
