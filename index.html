@@ -210,19 +210,24 @@
                 }
 
                 /**
-                 * County hover effects
+                 * County hover & selected effects
                  *
                  * Targets the ID wrapper instead of the path to ensure counties
                  * with multiple paths are fully highlighted on hover.
                  */
                 [id$='county'] [class$='County'] {
-                  transition: fill .28s;
+                  transition: fill .24s;
                 }
-                [id$='county']:hover .blueCounty {
+                [id$='county'].active .grayCounty {
+                  fill: #caccce;
+                }
+                [id$='county']:hover .blueCounty,
+                [id$='county'].active .blueCounty {
                   fill: #006298;
                   cursor: pointer;
                 }
-                [id$='county']:hover .greenCounty {
+                [id$='county']:hover .greenCounty,
+                [id$='county'].active .greenCounty {
                   fill: #506D23;
                   cursor: pointer;
                 }
@@ -831,8 +836,19 @@
                   The structure inside of the wrapper div can be any combination
                   of column widths that add up to 12 -->
                 <div id="county-intro-content">
+                  <!-- this container will show on initial page load before the
+                    user has interacted with the map -->
                   <div class="col-xs-12">
                     <h2>Introductory Content</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium velit reiciendis voluptatum, doloribus illum! Tempore distinctio soluta, aliquam sequi, doloribus voluptatum laborum reiciendis dolore ut veritatis ducimus, totam necessitatibus, quis.</p>
+                  </div>
+                </div> <!-- end intro content container -->
+
+                <div id="no-plans-content">
+                  <!-- this container will show when the user clicks on a county
+                    which has no plans available -->
+                  <div class="col-xs-12">
+                    <h2>No plans for this county</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium velit reiciendis voluptatum, doloribus illum! Tempore distinctio soluta, aliquam sequi, doloribus voluptatum laborum reiciendis dolore ut veritatis ducimus, totam necessitatibus, quis.</p>
                   </div>
                 </div> <!-- end intro content container -->
@@ -963,34 +979,34 @@
   <script>
     // Initially hide all county info containers
     // (safeguard in case 'display: none' was forgotten)
-    $('[id$="-county-info"]').hide();
+    $('[id$="-county-info"], #no-plans-content').hide();
 
     var $stateMap = $('#state-map');
     var $countySelect= $('#county-select-menu');
 
-    function toggleDisplayedCounty(county) {
-      var $county = $('#' + county + '-info');
+    function updateHighlight(county) {
+      $('[id$="county"]').removeClass('active');
+      $('#' + county).addClass('active');
+    }
 
-      // Hide intro content if it's visible.
-      $('#county-intro-content').hide();
+    function toggleDisplayedCounty(county) {
+      var $countyInfo = $('#' + county + '-info');
 
       // Hides curently displayed county info div.
-      $('[id$="county-info"]').hide();
+      $('#county-intro-content, #no-plans-content, [id$="county-info"]').hide();
+
+      updateHighlight(county);
 
       // Check if this county info div exists. If not, we don't have any plans
-      // available for the clicked-on county, so show the intro content again.
-      //
-      // Alternately, this could show a generic 'no plans' message. To do this,
-      // create a div with an ID of something like 'no-plans-info' and add
-      // $('#no-plans-info').show() to the 'if' block below.
-      if ($county.length === 0) {
+      // available for the clicked-on county, so show 'no plans' content.
+      if ($countyInfo.length === 0) {
         // If clicked-on county has no plans, set select menu to initial value.
         $countySelect.val("");
-        $('#county-intro-content').show();
+        $('#no-plans-content').show();
       } else {
         // Sync the select menu option with the clicked-on county of the SVG.
         $countySelect.val(county);
-        $county.show();
+        $countyInfo.show();
       }
     }
 
