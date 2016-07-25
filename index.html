@@ -194,13 +194,13 @@
                  *     svg: viewBox="0 0 1008 612"
                  *     css: padding-bottom: (612 / 1008) * 100% === 60.714%
                  */
-                .wa-state-map-container {
+                /*.wa-state-map-container {
                   position: relative;
                   overflow: visible;
                   padding-bottom: 66.667%;
                   width: 100%;
                   height: 1px;
-                }
+                }*/
                 #wa-state-map {
                   position: absolute;
                   top: 0;
@@ -233,13 +233,33 @@
                   <!-- Paste SVG code below.
 
                    NOTE: The SVG element must have an id of 'state-map' for
-                   it to be functional.
+                   it to be functional. The following 'preserveAspectRatio' &
+                   'style' attributes must also be added for the SVG to display
+                   properly in Internet Explorer.
 
+                      preserveAspectRatio="xMinYMin slice"
+
+                      style="width: 100%; padding-bottom: 66.667%; height: 1px;
+                      overflow: visible;"
+
+                   The 'padding-bottom' property controls the aspect ratio of
+                   the SVG. Its value can be calculated by dividing the svg
+                   element's 'viewBox' width and height values.
+                      e.g.
+                      svg: viewBox="0 0 1008 612"
+                      style: padding-bottom: (612 / 1008) * 100% === 60.714%
+
+                   =============================================================
                    In Adobe Illustrator, each county (outline and label)
                    should be in its own layer and be named [COUNTY NAME]-county,
                    e.g. 'king-county'. This will cause the resulting SVG to have
                    all of the necessary groups and IDs to function properly. -->
-                   <svg id="state-map" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 720 480">
+
+                   <svg id="state-map"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMinYMin slice"
+                        style="width: 100%; padding-bottom: 66.667%; height: 1px; overflow: visible;"
+                        x="0px" y="0px" viewBox="0 0 720 480">
                    	<style type="text/css">
                    		.blueCounty {
                    			fill: #0099D8;
@@ -260,7 +280,7 @@
                    			stroke-miterlimit: 10;
                    		}
                    		.st1 {
-                   			font-family: 'Arial', sans-serif;
+                   			font-family: Arial, sans-serif;
                    		}
                    		.st2 {
                    			font-size: 10px;
@@ -793,7 +813,6 @@
                    		<text transform="matrix(1 0 0 1 549.391 284.9171)" class="st3 st1 st2">Adams</text>
                    	</g>
                    </svg>
-
                 </div> <!-- end SVG column -->
               </div> <!-- end SVG row -->
 
