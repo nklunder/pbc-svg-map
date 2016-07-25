@@ -194,14 +194,14 @@
                  *     svg: viewBox="0 0 1008 612"
                  *     css: padding-bottom: (612 / 1008) * 100% === 60.714%
                  */
-                /*.wa-state-map-container {
+
+                .wa-state-map-container {
+                  height: 1px;
                   position: relative;
                   overflow: visible;
                   padding-bottom: 66.667%;
-                  width: 100%;
-                  height: 1px;
-                }*/
-                #wa-state-map {
+                }
+                #state-map {
                   position: absolute;
                   top: 0;
                   left: 0;
@@ -233,21 +233,7 @@
                   <!-- Paste SVG code below.
 
                    NOTE: The SVG element must have an id of 'state-map' for
-                   it to be functional. The following 'preserveAspectRatio' &
-                   'style' attributes must also be added for the SVG to display
-                   properly in Internet Explorer.
-
-                      preserveAspectRatio="xMinYMin slice"
-
-                      style="width: 100%; padding-bottom: 66.667%; height: 1px;
-                      overflow: visible;"
-
-                   The 'padding-bottom' property controls the aspect ratio of
-                   the SVG. Its value can be calculated by dividing the svg
-                   element's 'viewBox' width and height values.
-                      e.g.
-                      svg: viewBox="0 0 1008 612"
-                      style: padding-bottom: (612 / 1008) * 100% === 60.714%
+                   it to be functional.
 
                    =============================================================
                    In Adobe Illustrator, each county (outline and label)
@@ -255,57 +241,39 @@
                    e.g. 'king-county'. This will cause the resulting SVG to have
                    all of the necessary groups and IDs to function properly. -->
 
-                   <svg id="state-map"
-                        xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMinYMin slice"
-                        style="width: 100%; padding-bottom: 66.667%; height: 1px; overflow: visible;"
-                        x="0px" y="0px" viewBox="0 0 720 480">
+                   <svg id="state-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480">
                    	<style type="text/css">
                    		.blueCounty {
                    			fill: #0099D8;
                    			stroke: #004C6C;
                    			stroke-width: 1.0941;
-                   			stroke-miterlimit: 10;
-                   		}
+                   			stroke-miterlimit: 10; }
                    		.greenCounty {
                    			fill: #74A333;
                    			stroke: #004C6C;
                    			stroke-width: 1.0941;
-                   			stroke-miterlimit: 10;
-                   		}
+                   			stroke-miterlimit: 10; }
                    		.grayCounty {
                    			fill: #E6E7E8;
                    			stroke: #004C6C;
                    			stroke-width: 1.0941;
-                   			stroke-miterlimit: 10;
-                   		}
-                   		.st1 {
-                   			font-family: Arial, sans-serif;
-                   		}
-                   		.st2 {
-                   			font-size: 10px;
-                   		}
-                   		.st3 {
-                   			fill: #FFFFFF;
-                   		}
-                   		.st4 {
-                   			font-size: 8.3151px;
-                   		}
+                   			stroke-miterlimit: 10; }
+                   		.st1 { font-family: Arial, sans-serif; }
+                   		.st2 { font-size: 10px; }
+                   		.st3 { fill: #FFFFFF; }
+                   		.st4 { font-size: 8.3151px; }
                    		.st5 {
                    			fill: #F0C21A;
                    			stroke: #004C6C;
                    			stroke-width: 1.0941;
-                   			stroke-miterlimit: 10;
-                   		}
+                   			stroke-miterlimit: 10; }
                    		.st6 {
                    			fill: none;
                    			stroke: #FFFFFF;
-                   			stroke-width: 3;
-                   		}
+                   			stroke-width: 3; }
                    	</style>
                    	<g id="yakima-county">
-                   		<path
-                   			class="grayCounty"
+                   		<path class="grayCounty"
                    			d="M433,318.7c0,0-43.1-1.9-44.1-1.7c-1,0.2-5.6,1.2-7.2-2.6c-1.6-3.8,3-4.4,1.8-5.8
                    		c-1.2-1.4-3.8-1.8-5.6-1.8c-1.8,0-8-1.6-8.2-5.2c-0.2-3.6,1-7.4-2.8-7.6c-3.8-0.2-31.2-0.2-31-0.8l-0.3-0.2c0.2-0.6-6-1.4-7.8-9.6
                    		c-1.8-8.2-14-13.4-16.8-14.2l-6.4,0.4c-1.4,1,0.4,3.4,0,4.8c-0.4,1.4-1.4,1-4,3.3c-2.6,2.3-3.8,5.3-3.6,6.3c0.2,1,0.2,4.4-1,4.8
@@ -328,7 +296,6 @@
                    		c1.5-1-1.2-1.9,3.5-6.2c4.7-4.3,9-1.6,12-0.1c3,1.5,2.7-0.4,3.8-1c1.1-0.6,8.4-1,9.3-0.7c0.9,0.3,7.1,6.9,7.5,9.4
                    		c0.4,2.5,3.3,2.6,4.7,3.1c1.4,0.5,7.8,6,8.7,7.3c0.9,1.3-0.1,2.9-0.9,5.3c-0.8,2.4,2,1.9,2.7,2.5c0.7,0.6,1.4,2.4,0,3.8
                    		c0,0,1.8,2.1,1.8,4c0,1.9,11,0.3,14.1,0.8c2.3,0.4,2.9,2.6,2.9,2.6l-3.5-113.8H615.4z"/>
-
                    		<text transform="matrix(1 0 0 1 636.2811 285.1143)" class="st3 st1 st2">Whitman</text>
                    	</g>
                    	<g id="whatcom-county">
@@ -339,7 +306,6 @@
                    		c2.7,0,152.7,2,152.7,2s3.3-0.3,1.5,3.3c-1.8,3.6,1.2,5.4,4.2,5.4c3,0,0.9,6.9,1.8,7.5c0.9,0.6,3.6,6,3,6.9
                    		c-0.6,0.9,0.3,6.9,1.8,7.2c1.5,0.3,4.2,5.1,4.2,5.1s-0.3,6.6-2.4,8.4c-2.1,1.8-6.3,6.3-6.3,6.3s-2.7-2.7-5.7-1.8
                    		c-3,0.9-4.2,3.3-8.1,3.6c-3.9,0.3-6.9,0-14.4,0s-105.8-3.9-105.8-3.9S215,54.8,211,54.9z"/>
-
                    		<text transform="matrix(1 0 0 1 248.1707 33.9229)" class="st3 st1 st2">Whatcom</text>
                    	</g>
                    	<g id="walla-walla-county">
